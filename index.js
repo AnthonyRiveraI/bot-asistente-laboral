@@ -10,6 +10,12 @@ const { getCurrentTime } = require('./utility_tools/datetime');
 const { loadToolsFromDirectory } = require('./coreFunctions');
 
 const app = express();
+app.use(cors({
+    origin: 'http://127.0.0.1:5500', // Permitir solicitudes desde este origen
+    methods: ['GET', 'POST'], // Métodos permitidos
+    allowedHeaders: ['Content-Type', 'Authorization', 'X-API-KEY'], // Encabezados permitidos
+}));
+
 app.use(express.json());
 
 // Conectar a la base de datos
