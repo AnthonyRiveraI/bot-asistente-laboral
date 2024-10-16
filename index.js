@@ -1,7 +1,9 @@
+
 const express = require("express");
 const mongoose = require('mongoose');
 const rateLimit = require("express-rate-limit");
 const axios = require('axios');
+const cors = require('cors');
 require("dotenv").config();
 const path = require('path');
 const { connectDB, Thread } = require('./db');
